@@ -12,7 +12,7 @@ import {ArticleWithAuthor} from "./interfaces/articlewithauthor";
 })
 export class ArticleService {
 
-  private apiUrl: string = 'http://localhost:3000';
+  private apiUrl: string = 'https://json-server-zeev.onrender.com';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

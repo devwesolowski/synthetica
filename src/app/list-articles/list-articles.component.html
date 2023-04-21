@@ -1,0 +1,30 @@
+<div class="list-articles-wrapper">
+  <h3>Newest Articles</h3>
+  <hr>
+
+  <div class="latest-wrapper">
+    <div
+      class="latest-container">
+
+      <div *ngFor="let article of displayedArticles"
+        class="latest-article-container">
+        <div
+          class="latest-article-card">
+          <a routerLink="/article/{{article.id}}">
+            <img class="img-rnd" src="{{article.heroImage}}">
+            <h6>{{article.title}}</h6>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <nz-pagination
+      [nzPageIndex]="pageIndex"
+      [nzPageSize]="pageSize"
+      [nzTotal]="totalArticles"
+      (nzPageIndexChange)="onPageIndexChange($event)">
+    </nz-pagination>
+  </div>
+
+</div>
+

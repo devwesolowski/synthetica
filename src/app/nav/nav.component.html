@@ -1,0 +1,49 @@
+<div #navWrapper
+  class="nav-wrapper">
+  <header>
+    <div class="nav-wrapper is-fixed">
+      <div class="nav-container">
+        <nav>
+          <a class="logo"
+             routerLink="/articles"
+          ></a>
+          <div class="navbar">
+          <a
+            routerLink="/category/1">
+            <span>
+              Technology
+            </span>
+          </a>
+          <a
+            routerLink="/category/2">
+            <span>
+              Movies
+            </span>
+          </a>
+          <a
+            routerLink="/category/3">
+            <span>
+              Music
+            </span>
+          </a>
+          <a
+            routerLink="/category/4">
+            <span>
+              Games
+            </span>
+          </a>
+          </div>
+        </nav>
+        <div class="button-container">
+          <button
+            *ngIf="showButton"
+            (click)="onButtonClick()"
+            type="button"
+            class="btn btn-primary">
+            Create Article
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

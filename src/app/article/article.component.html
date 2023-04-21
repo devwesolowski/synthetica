@@ -1,0 +1,41 @@
+<div *ngIf="loadedArticle"
+  class="wrapper">
+  <div class="article-title">
+    <h1>{{loadedArticle.title}}</h1>
+  </div>
+  <div class="author-card">
+    <img nz-image
+      class="img-rnd" alt="profile pic" width="36" height="36" style="margin-right: 1rem;"
+         [nzSrc]="srcAuthor" nzSrc="error" [nzFallback]="fallback">
+    <span *ngIf="loadedArticle.author">Written by {{loadedArticle.author.name}}</span>
+    <span *ngIf="!loadedArticle.author">No Author Found</span>
+    <span>&nbsp;-&nbsp;</span>
+    <span>{{ getDate(loadedArticle.dateAdded) | date }}</span>
+  </div>
+<div class="hero-image-container">
+  <img nz-image [nzSrc]="srcHero" nzSrc="error" [nzFallback]="fallback" class="hero-image">
+</div>
+  <div class="hero-content-container">
+    <p [innerHTML]="loadedArticle.body.replaceAll('\n', '<br>')"></p>
+  </div>
+  <div class="suggestion-container">
+    <app-suggest-article></app-suggest-article>
+  </div>
+  <div class="social-sharing-container">
+    <app-share
+      [articleTitle]="loadedArticle.title"
+    ></app-share>
+  </div>
+  <hr>
+    <div class="about-author-container">
+    <app-about-author
+      [author]="loadedArticle.author"
+    ></app-about-author>
+  </div>
+</div>
+<div class="missing-wrapper"
+  *ngIf="!loadedArticle">
+  <div>
+    <h1 style="color: lightgray;">Content Missing 404</h1>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+header {
+  min-height: 90px;
+  background-color: #fefefe;
+}
+nav {
+  //overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-wrapper {
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1100px;
+  min-height: 90px;
+  margin: 0 auto;
+  display: flex;
+  //flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  width: 25%;
+  flex: 1 1 0;
+  margin-left: 20px;
+}
+
+.navbar a {
+  padding: 13px 20px;
+}
+
+.logo {
+  display: block;
+  height: 50px;
+  //margin: 0px 25px 0px 0px;
+  //padding: 5px 0px 10px;
+  width: 252px;
+  background: url("src/assets/syntheticaLogo.png") 0px 5px / 100% no-repeat;
+}
+
+.is-fixed {
+  -webkit-animation-duration:0.35s;
+  -webkit-animation-name:ffftsv;
+  -webkit-animation-timing-function:cubic-bezier(0.165,0.84,0.44,1);
+  animation-duration:0.35s;
+  animation-name: ffftsv;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #fefefe;
+  box-shadow: rgba(25, 45, 100, 0.08) 0px 10px 30px 0px;
+  min-height: 90px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+  animation-duration: 0.35s;
+}
+
+@-webkit-keyframes ffftsv {
+  0% {
+    -webkit-transform:translateY(-100%);
+    -ms-transform:translateY(-100%);
+    transform:translateY(-100%);
+  }
+  100% {
+    -webkit-transform:translateY(0);
+    -ms-transform:translateY(0);
+    transform:translateY(0);
+  }
+}
+/*!sc*/
+@keyframes ffftsv {
+  0% {
+    -webkit-transform:translateY(-100%);
+    -ms-transform:translateY(-100%);
+    transform:translateY(-100%);
+  }
+  100% {
+    -webkit-transform:translateY(0);
+    -ms-transform:translateY(0);
+    transform:translateY(0);
+  }
+}

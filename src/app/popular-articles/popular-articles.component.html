@@ -1,0 +1,32 @@
+<div *ngIf="dataLoaded"
+  class="popular-wrapper">
+  <div class="main-article">
+    <div class="article-card-lg">
+      <a routerLink="/article/{{mainArticle.id}}">
+        <div class="article-img-lg">
+          <img class="img-rnd" alt="Popular Article Content Image" src="{{mainArticle.heroImage}}">
+        </div>
+        <div class="article-header-lg">
+            <h2>{{mainArticle.title}}</h2>
+        </div>
+        <div class="article-detail">
+          <p>{{mainArticle.body.length > 142 ? mainArticle.body.substring(0, mainArticle.body.lastIndexOf(' ', 142)) + '...'
+            : mainArticle.body}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="side-articles">
+    <div *ngFor="let sideArticle of sideArticles"
+      class="article-card-sm">
+      <a routerLink="/article/{{sideArticle.id}}">
+        <div class="article-img-sm">
+          <img class="img-rnd" src="{{sideArticle.heroImage}}">
+        </div>
+        <div class="article-header-sm">
+            <h6>{{sideArticle.title}}</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

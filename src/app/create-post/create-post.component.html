@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="form-container">
+    <h2>Submit New Article</h2>
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="title" nzRequired>Article Title</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="title" name="title" type="text" id="title">
+      </nz-form-control>
+    </nz-form-item >
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="hero-image" nzRequired>Main Article Image</nz-form-label>
+      <nz-form-control [nzSpan]="9">
+        <input nz-input formControlName="heroImage" name="hero-image" type="url" id="hero-image"
+               placeholder="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png">
+      </nz-form-control>
+      <span style="align-self: center; margin-left: 1rem;">Please enter a valid URL for an image (Keep Aspect
+        Ratio ~16:9)</span>
+    </nz-form-item >
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="body" nzRequired>Article Body</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzHasFeedback nzErrorTip="Please write something here!">
+        <nz-textarea-count [nzMaxCharacterCount]="10000">
+          <textarea nz-input formControlName="body" name="body" rows="6" placeholder="write any thing"></textarea>
+        </nz-textarea-count>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="category" nzRequired>Category</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please select your category!">
+        <nz-select
+          id="category"
+          formControlName="category"
+          nzPlaceHolder="Select an article category"
+        ><!--          TODO: SET TO ngFOR through the category db array!-->
+          <nz-option nzValue="Technology" nzLabel="Technology"></nz-option>
+          <nz-option nzValue="Movies" nzLabel="Movies"></nz-option>
+          <nz-option nzValue="Music" nzLabel="Music"></nz-option>
+          <nz-option nzValue="Games" nzLabel="Games"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button [disabled]="!validateForm.valid" nzType="primary" >Submit</button>
+        <button nz-button (click)="resetForm($event)">Reset</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="latest-wrapper">
+  <h2>Discover the latest in...</h2>
+  <div *ngFor="let category of categories"
+       class="latest-container">
+    <div class="latest-category">
+      <div class="category-name">
+        <h2>{{category.name}}</h2>
+      </div>
+      <div class="view-more-container">
+        <a routerLink="/category/{{category.id}}">View More</a>
+      </div>
+    </div>
+    <hr>
+    <div class="latest-article-container">
+      <div *ngFor="let article of articlesByCategory[category.id]"
+           class="latest-article-card">
+        <a routerLink="/article/{{article.id}}">
+          <img class="img-rnd" src="{{article.heroImage}}">
+          <h6>{{article.title}}</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

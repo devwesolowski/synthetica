@@ -6,8 +6,8 @@ import {ArticleCategoryComponent} from "./article-category/article-category.comp
 import {CreatePostComponent} from "./create-post/create-post.component";
 
 const routes: Routes = [
-//   { path: '', redirectTo: '/articles', pathMatch: 'full' },
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/articles', pathMatch: 'full' },
+  { path: 'articles', component: HomeComponent },
   { path: 'article/:id', component: ArticleComponent },
   { path: 'category/:id', component: ArticleCategoryComponent},
   { path: 'create', component: CreatePostComponent}
